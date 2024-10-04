@@ -1,4 +1,4 @@
-Đây là một file package.json, được sử dụng trong các dự án Node.js để mô tả thông tin về package và các dependencies. Dưới đây là giải thích về các trường chính trong file này:
+## Đây là một file package.json, được sử dụng trong các dự án Node.js để mô tả thông tin về package và các dependencies. Dưới đây là giải thích về các trường chính trong file này:
 
 - name: Tên của package.
 - main: Tệp chính cho Node.js (CommonJS hoặc ES module).
@@ -23,51 +23,47 @@
 - browserslist: Được sử dụng để cho biết chúng ta muốn hỗ trợ trình duyệt nào (và phiên bản của chúng). Nó được tham chiếu bởi Babel, Autoprefixer và các công cụ khác, để chỉ thêm polyfills và dự phòng cần thiết cho các trình duyệt mà chúng ta hướng đến. Ví dụ trên có nghĩa là chúng ta muốn hỗ trợ 2 phiên bản chính cuối cùng của tất cả các trình duyệt với ít nhất 1% mức sử dụng (theo thống kê của CanIUse.com), ngoại trừ IE8 trở xuống.
  packageManager: chỉ định loại package manager mà bạn muốn sử dụng (npm hoặc yarn, pnpm).
 
-
-
 ## Tips
 
-- mjs có thể import cjs
+- mjs file không thể import cjs package
 
-- cjs không thể import trực tiếp mjs, dùng cách này
-
+- cjs file không thể import trực tiếp mjs package, dùng cách này
 ```ts
 const start = async () => {
   const func = await import('xxx.mjs');
 }
 
-
-
 start().then()
 ```
 
-## Refer
+## Export
 
-- https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
-
-
+```json
 // "exports": {
 	// 	"types": "./index.d.ts",
 	// 	"default": "./index.js"
 	// },
 "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    },
-    "./foo": {
-      "types": "./dist/foo.d.ts",
-      "import": "./dist/foo.mjs",
-      "require": "./dist/foo.cjs"
-    }
+  ".": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
   },
+  "./foo": {
+    "types": "./dist/foo.d.ts",
+    "import": "./dist/foo.mjs",
+    "require": "./dist/foo.cjs"
+  }
+},
+```
 
-// Side effect: src/index.ts
-// Gán một thuộc tính cho một đối tượng toàn cục như window
-// Thay đổi tất cả các đối tượng khác
-// Gọi nhiều hàm dựng sẵn, nhưfetch
-// Gọi các hàm do người dùng định nghĩa có chứa các tác dụng phụ
+## Side effects
+
+- Side effect: src/index.ts
+- Gán một thuộc tính cho một đối tượng toàn cục như window
+- Thay đổi tất cả các đối tượng khác
+- Gọi nhiều hàm dựng sẵn, nhưfetch
+- Gọi các hàm do người dùng định nghĩa có chứa các tác dụng phụ
 
 
 ## Bundler tool
@@ -79,3 +75,25 @@ start().then()
 - Snowpack
 - esbuild => tsup/unbuild
 - microbundle
+
+
+## Check package.json
+
+https://publint.dev/
+
+## Check tree-shaking
+
+https://bundlephobia.com/
+
+## Check bundle size
+
+https://bundlephobia.com/
+
+## Check package support cjs, esm
+
+https://www.npmjs.com/package/@arethetypeswrong/cli
+
+## Refer
+
+- https://github.com/arethetypeswrong/arethetypeswrong.github.io/blob/main/docs/problems/FalseCJS.md
+
