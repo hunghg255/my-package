@@ -1,0 +1,68 @@
+{
+	"name": "my-package",
+	"version": "7.0.2",
+	"description": "Map over promises concurrently",
+	"license": "MIT",
+	"repository": "hunghg255/my-package",
+	"funding": "https://github.com/sponsors/hunghg255",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "giahung197bg@gmail.com",
+		"url": "https://hunghg255.me"
+	},
+	"type": "module",
+	"main": "./index.mjs",
+	"module": "./index.mjs",
+	"types": "./index.d.mts",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js",
+		"import": "./index.mjs",
+		"require": "./index.js"
+	},
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./index.d.ts",
+				"./*"
+			]
+		}
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"promise",
+		"map",
+		"resolved",
+		"wait",
+		"collection",
+		"iterable",
+		"iterator",
+		"race",
+		"fulfilled",
+		"async",
+		"await",
+		"promises",
+		"concurrently",
+		"concurrency",
+		"parallel",
+		"bluebird"
+	],
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not ie <= 8"
+	],
+	"dependencies": {
+		"hung-pkg-test": "^0.0.5"
+	}
+}
