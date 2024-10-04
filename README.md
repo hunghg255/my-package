@@ -63,6 +63,12 @@ start().then()
     }
   },
 
+// Side effect: src/index.ts
+// Gán một thuộc tính cho một đối tượng toàn cục như window
+// Thay đổi tất cả các đối tượng khác
+// Gọi nhiều hàm dựng sẵn, nhưfetch
+// Gọi các hàm do người dùng định nghĩa có chứa các tác dụng phụ
+
 
 ## Bundler tool
 
