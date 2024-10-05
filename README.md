@@ -22,6 +22,10 @@
 - typesVersions:  field in package.json to redirect typings (https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html#version-selection-with-typesversions)
 - browserslist: Được sử dụng để cho biết chúng ta muốn hỗ trợ trình duyệt nào (và phiên bản của chúng). Nó được tham chiếu bởi Babel, Autoprefixer và các công cụ khác, để chỉ thêm polyfills và dự phòng cần thiết cho các trình duyệt mà chúng ta hướng đến. Ví dụ trên có nghĩa là chúng ta muốn hỗ trợ 2 phiên bản chính cuối cùng của tất cả các trình duyệt với ít nhất 1% mức sử dụng (theo thống kê của CanIUse.com), ngoại trừ IE8 trở xuống.
  packageManager: chỉ định loại package manager mà bạn muốn sử dụng (npm hoặc yarn, pnpm).
+ - bin: Định nghĩa các lệnh CLI mà package cung cấp.
+
+npm: cài đặt package
+npx: chạy lệnh mà không cần cài đặt package
 
 ## Tips
 

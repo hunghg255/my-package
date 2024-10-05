@@ -1,6 +1,6 @@
 {
-	"name": "my-package",
-	"version": "7.0.2",
+	"name": "hung255-pkg",
+	"version": "0.0.2",
 	"description": "Map over promises concurrently",
 	"license": "MIT",
 	"repository": "hunghg255/my-package",
@@ -33,9 +33,10 @@
 		"node": ">=18"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd"
+		"test-bin": "test-bin --url=https://www.google.com"
 	},
 	"files": [
+		"bin",
 		"index.js",
 		"index.d.ts"
 	],
@@ -63,6 +64,10 @@
 		"not ie <= 8"
 	],
 	"dependencies": {
-		"hung-pkg-test": "^0.0.5"
+		"hung-pkg-test": "^0.0.5",
+		"hung255-pkg": "^0.0.2"
+	},
+	"bin": {
+		"test-bin": "./bin/cli.mjs"
 	}
 }
