@@ -32,6 +32,7 @@ npx: chạy lệnh mà không cần cài đặt package
 - mjs file không thể import cjs package
 
 - cjs file không thể import trực tiếp mjs package, dùng cách này
++ ở bản node 23 có thể import trực tiếp mjs package
 ```ts
 const start = async () => {
   const func = await import('xxx.mjs');
